@@ -16,7 +16,7 @@ var App = Vue.component("testata",{
 Vue.component("diagnostica-list", {
   template:`
   <div>
-    <h2>SCHEDE DIAGNOSTICA</h2>
+    <h4>RISULTATI DIAGNOSTICA</h4>
 
     <div>
         <diagnostica-box v-for="tab in tab" :key="tab.id" v-bind:item="tab"></diagnostica-box>
@@ -36,25 +36,25 @@ Vue.component("diagnostica-list", {
       tab:[
         {
           id:1,
-          tipo:"tecnico",
+          tipo:"img-tech.png",
           descrizione: this.descr,
           rating: "***"
         },
         {
           id:2,
-          tipo:"rendimento",
+          tipo:"img-banchmark.png",
           descrizione: "descrizione breve del dato",
           rating: "**"
         },
         {
           id:3,
-          tipo:"prestazioni",
+          tipo:"img-info.png",
           descrizione: "descrizione breve del dato",
           rating: "*****"
         },
         {
           id:4,
-          tipo:"allert",
+          tipo:"img-allert.png",
           descrizione: "descrizione breve del dato",
           rating: "*********"
         }
@@ -68,9 +68,20 @@ Vue.component("diagnostica-list", {
  Vue.component("diagnostica-box",{
    template:`
    <div class="card card-bg" style="width: 240px; float:left;margin: 16px;">
+      <div class="card-wrapper">
+      <div class="card card-img no-after">
+        <div class="img-responsive-wrapper">
+          <div class="img-responsive img-responsive-panoramic">
+            <figure class="img-wrapper">
+              <img :src="item.tipo" >
+            </figure>
+          </div>
+        </div>
+   
+      
       <div class="card-body">
-         <h4 class="card-title">{{ item.tipo }}</h4>
-         <p class="card-text">{{ item.descrizione}}</p>
+         <!---<h4 class="card-title">{{ item.tipo }}</h4>--->
+         <p class="card-text">{{ item.TIPO}}</p>
          <p class="card-text text-righ"><strong>RATIG: {{item.rating}}</strong></p>
          <a href="#" class="btn btn-primary">dettagli</a>
       </div>
