@@ -9,8 +9,8 @@ var App = Vue.component("testata",{
       </div>
   </div>
   ` ,
-  data() {
-    return {};
+  aumentarating () {
+    ;
   }
 });
 Vue.component("diagnostica-list", {
@@ -83,7 +83,7 @@ Vue.component("diagnostica-list", {
          <!---<h4 class="card-title">{{ item.tipo }}</h4>--->
          <p class="card-text">{{ item.TIPO}}</p>
          <p class="card-text text-righ"><strong>RATIG: {{item.rating}}</strong></p>
-         <a href="#" class="btn btn-primary">dettagli</a>
+         <a href="#" class="btn btn-primary" v-on:click="item.rating ='-------'">dettagli</a>
       </div>
    </div>
 `,
