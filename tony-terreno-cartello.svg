@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="6155px" height="1286px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 16588 3465"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str2 {stroke:#669999;stroke-width:21.5606}
+    .str0 {stroke:#669999;stroke-width:26.9495}
+    .str5 {stroke:#FF6600;stroke-width:26.9495}
+    .str1 {stroke:#669999;stroke-width:43.1195}
+    .str3 {stroke:#99CCCC;stroke-width:53.9006;stroke-linecap:round;stroke-linejoin:bevel}
+    .str4 {stroke:#FF6600;stroke-width:53.9006}
+    .fil0 {fill:none}
+    .fil1 {fill:#99CCCC}
+    .fil3 {fill:#FF6600}
+    .fil2 {fill:white}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1021501504">
+   <rect class="fil0 str0" x="2554" y="2261" width="339" height="950" rx="66" ry="66"/>
+   <ellipse class="fil1 str0" cx="2724" cy="3274" rx="211" ry="125"/>
+  </g>
+  <g id="_1020618160">
+   <rect class="fil0 str0" transform="matrix(0.991188 -0.132461 0.132461 0.991188 2990.5 2291.76)" width="339" height="950" rx="66" ry="66"/>
+   <ellipse class="fil1 str0" transform="matrix(0.991188 -0.132461 0.132461 0.991188 3292.97 3274.29)" rx="211" ry="125"/>
+  </g>
+  <rect class="fil2 str1" x="2481" y="1305" width="923" height="977" rx="175" ry="175"/>
+  <g id="_1020617296">
+   <polygon class="fil1 str2" points="2487,854 3378,853 3468,203 3212,308 3259,210 3158,264 2710,18 2710,207 2528,28 2471,294 2400,224 "/>
+   <rect class="fil2 str2" x="2487" y="340" width="892" height="885" rx="204" ry="204"/>
+   <rect class="fil1 str2" x="2515" y="530" width="394" height="307" rx="71" ry="71"/>
+   <rect class="fil1 str2" x="2969" y="530" width="394" height="307" rx="71" ry="71"/>
+   <path class="fil0 str2" d="M2996 854c-7,14 -32,24 -60,23 -25,-1 -46,-10 -52,-23"/>
+   <path class="fil0 str2" d="M2969 650c0,0 0,0 0,0 -1,-17 -15,-29 -32,-28 -17,1 -29,15 -28,32"/>
+   <path class="fil0 str3" d="M2925 922l-147 20 -25 239 194 152m22 -411l147 20 25 239 -194 152"/>
+   <line class="fil0 str2" x1="2860" y1="1095" x2="3042" y2= "1095" />
+   <path class="fil1" d="M2946 1333l-194 -152c108,11 166,-11 194,-54 38,49 102,68 194,54l-194 152z"/>
+  </g>
+  <path class="fil2 str2" d="M2333 1602l259 399c25,39 80,46 117,19l121 -87c37,-27 46,-80 19,-117l-335 -459c-118,31 -180,112 -181,246z"/>
+  <rect class="fil2 str2" transform="matrix(-0.32827 -0.841722 1.29744 -0.483211 2739.76 2094.99)" width="229" height="532" rx="55" ry="55"/>
+  <path class="fil2 str2" d="M3550 1602l-259 399c-25,39 -80,46 -117,19l-121 -87c-37,-27 -46,-80 -19,-117l335 -459c118,31 180,112 181,246z"/>
+  <rect class="fil2 str2" transform="matrix(0.32827 -0.841722 -1.29744 -0.483211 3205.71 2106.91)" width="229" height="532" rx="55" ry="55"/>
+  <polyline class="fil0 str4" points="0,3428 1267,3428 1351,3387 1472,3428 1577,3387 1678,3438 5528,3435 5585,3297 5946,3435 6172,3327 6323,3435 13583,3430 13603,3234 13933,3430 14162,3429 14425,3187 14553,3429 16588,3428 "/>
+  <rect class="fil3" x="7802" y="537" width="283" height="2896" rx="94" ry="94"/>
+  <rect id="inputarea" class="fil2 str5" x="4555" y="830" width="6778" height="765"/>
+    
+ </g>
+</svg>

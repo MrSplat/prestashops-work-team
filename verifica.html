@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/buefy.min.css">
+  </head>
+
+  <body>
+    <h1>Diagnostica</h1>
+    <br/>
+    <div id="app">
+
+      <template>
+        <section>
+          <b-field
+            label="Verifica dominio"
+            label-position="on-border"
+            :type="stato_dominio"
+          >
+            <b-input type="url" v-model="dominio" @input="aggiorna_dominio" placeholder="www.ecommerce.it" rounded></b-input>
+            <span v-if="!aggiornamento_dominio">
+              <b-button @click="aggiorna_dominio">Vai</b-button>
+            </span>
+            <span v-else>
+              <b-button loading></b-button>
+            </span>
+          </b-field>
+
+          <b-field
+            label="Verifica pannello"
+            label-position="on-border"
+            :type="stato_pannello"
+          >
+            <b-input type="url" v-model="pannello" placeholder="www.ecommerce.it/admin" rounded></b-input>
+            <b-button :type="info_pannello" @click="chiedi_pannello">Vai</b-button>
+          </b-field>
+        </b-field>
+
+<!--         <span v-if="abbiamo_info"> -->
+          <b-field label="IP">
+            <b-input rows="3" type="textarea" v-model="ip"></b-input>
+          </b-field>
+          <b-field label="WHOIS">
+            <b-input rows="3" type="textarea" v-model="whois"></b-input>
+          </b-field>
+<!--         </span> -->
+
+        </section>
+
+      </template>
+
+    </div>
+
+    <script src="/js/vue.js"></script>
+    <script src="/js/buefy.min.js"></script>
+    <script src="https://unpkg.com/lodash@4.16.0"></script>
+
+    <script>
+      const API='/api';
+      const USER_WAIT=500;
+      new Vue({
+        el: '#app',
+        data: {
+          dominio: '',
+          pannello: '',
+          json: {},
+          info: '',
+          ip: '',
+          whois: '',
+          abbiamo_info: false,
+          stato_dominio: 'is-warning',
+          info_dominio: 'disabled',
+          stato_pannello: 'is-warning',
+          info_pannello: 'disabled',
+          aggiornamento_dominio: false
+        },
+        methods: {
+          aggiorna_dominio: _.debounce( async function(e) {
+            const _this = this;
+
+            _this.abbiamo_info = false;
+            _this.aggiornamento_dominio = true;
+            await fetch( API+'/verify', { 
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              method: 'post',
+              body: JSON.stringify({domain: _this.dominio}) 
+            })
+            .then(response => { console.log('response',response); return response.status==200 ? response.json() : {results: {status: false}} })
+            .then((data) => {
+              _this.json = data.results;
+
+              console.log('_this.json',_this.json);
+              if (_this.json.host) {
+                _this.info = JSON.stringify(_this.json, null, 2) 
+              } else {
+                console.log('errore lato server?');
+                _this.$buefy.toast.open({
+                  message: "Sito non raggiungibile, verifica l'URL",
+                  type: 'is-danger'
+                });
+              }
+              _this.aggiornamento_dominio = false;
+            });
+
+            if (_this.json.host) {
+              _this.abbiamo_info = true;
+              _this.ip = JSON.stringify(_this.json.ip, null, 2);
+              _this.whois = JSON.stringify(_this.json.whois, null, 2);
+            }
+
+          }, USER_WAIT),
+          chiedi_pannello() {
+            console.log('chiedi_pannello', this.pannello);
+          }
+        }
+      })
+    </script>

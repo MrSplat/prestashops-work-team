@@ -1,0 +1,38 @@
+  <template>
+        <section>
+          <b-field
+            label="Verifica dominio"
+            label-position="on-border"
+            :type="stato_dominio"
+          >
+            <b-input type="url" v-model="dominio" @input="aggiorna_dominio" placeholder="www.ecommerce.it" rounded></b-input>
+            <span v-if="!aggiornamento_dominio">
+              <b-button @click="aggiorna_dominio">Vai</b-button>
+            </span>
+            <span v-else>
+              <b-button loading></b-button>
+            </span>
+          </b-field>
+
+          <b-field
+            label="Verifica pannello"
+            label-position="on-border"
+            :type="stato_pannello"
+          >
+            <b-input type="url" v-model="pannello" placeholder="www.ecommerce.it/admin" rounded></b-input>
+            <b-button :type="info_pannello" @click="chiedi_pannello">Vai</b-button>
+          </b-field>
+        </b-field>
+
+<!--         <span v-if="abbiamo_info"> -->
+          <b-field label="IP">
+            <b-input rows="3" type="textarea" v-model="ip"></b-input>
+          </b-field>
+          <b-field label="WHOIS">
+            <b-input rows="3" type="textarea" v-model="whois"></b-input>
+          </b-field>
+<!--         </span> -->
+
+        </section>
+
+      </template>
